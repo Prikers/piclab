@@ -25,5 +25,5 @@ contextBridge.exposeInMainWorld('mainApi', {
       return result
     }
     throw new Error(`Invoke failed: Unknown ipc channel name: ${channel}`)
-  }
+  },
 })

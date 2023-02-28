@@ -11,5 +11,5 @@ export default createI18n({
   messages: {
     en,
     fr,
-  }
+  },
 })

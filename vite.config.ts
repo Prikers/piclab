@@ -16,13 +16,13 @@ export default defineConfig({
   define: {
     __VUE_I18N_FULL_INSTALL__: true,
     __VUE_I18N_LEGACY_API__: false,
-    __INTLIFY_PROD_DEVTOOLS__: false
+    __INTLIFY_PROD_DEVTOOLS__: false,
   },
   resolve: {
     extensions: ['.mjs', '.js', '.ts', '.vue', '.json', '.scss'],
     alias: {
-      '@': resolve(dirname(fileURLToPath(import.meta.url)), 'src')
-    }
+      '@': resolve(dirname(fileURLToPath(import.meta.url)), 'src'),
+    },
   },
   base: './',
   root: resolve('./src/renderer'),
@@ -30,14 +30,14 @@ export default defineConfig({
   clearScreen: false,
   build: {
     assetsDir: '', // See: https://github.com/electron-vite/electron-vite-vue/issues/287
-    outDir: resolve('./dist')
+    outDir: resolve('./dist'),
   },
   plugins: [
     vue(),
     vueJsx(),
     // Docs: https://github.com/vuetifyjs/vuetify-loader
     vuetifyPlugin({
-      autoImport: true
+      autoImport: true,
     }),
     // Docs: https://github.com/gxmari007/vite-plugin-eslint
     eslintPlugin(),
@@ -47,9 +47,9 @@ export default defineConfig({
         entry: ['src/preload/index.ts'],
         vite: {
           build: {
-            outDir: 'dist/preload'
-          }
-        }
+            outDir: 'dist/preload',
+          },
+        },
       },
       {
         entry: ['src/main/index.ts'],
@@ -61,12 +61,12 @@ export default defineConfig({
             assetsDir: '.',
             outDir: 'dist/main',
             rollupOptions: {
-              external: ['electron', ...builtinModules]
-            }
-          }
-        }
-      }
+              external: ['electron', ...builtinModules],
+            },
+          },
+        },
+      },
     ]),
-    rendererPlugin()
-  ]
+    rendererPlugin(),
+  ],
 })

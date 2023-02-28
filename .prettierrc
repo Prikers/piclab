@@ -4,7 +4,7 @@
   "vueIndentScriptAndStyle": false,
   "singleQuote": true,
   "quoteProps": "as-needed",
-  "trailingComma": "none",
+  "trailingComma": "es5",
   "bracketSpacing": true,
   "bracketSameLine": false,
   "jsxBracketSameLine": false,

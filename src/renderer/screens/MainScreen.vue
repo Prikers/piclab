@@ -44,12 +44,7 @@ const handleCountIncrease = (): void => {
   <v-container>
     <v-row no-gutters align="center" class="text-center">
       <v-col cols="12" md="5">
-        <img
-          alt="logo"
-          draggable="false"
-          class="ma-auto h-auto w-75"
-          src="/images/logo.webp"
-        />
+        <img alt="logo" draggable="false" class="ma-auto h-auto w-75" src="/images/logo.webp" />
       </v-col>
       <v-col cols="12" md="7">
         <h2 class="my-4">{{ $t('desc.welcome-title') }}</h2>

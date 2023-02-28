@@ -17,7 +17,7 @@ export const createMainWindow = async (mainWindow: BrowserWindow): Promise<Brows
     width: Constants.IS_DEV_ENV ? 1500 : 1200,
     height: 650,
     useContentSize: true,
-    webPreferences: Constants.DEFAULT_WEB_PREFERENCES
+    webPreferences: Constants.DEFAULT_WEB_PREFERENCES,
   })
 
   mainWindow.setMenu(null)
@@ -65,7 +65,7 @@ export const createErrorWindow = async (
     title: Constants.APP_NAME,
     show: false,
     resizable: Constants.IS_DEV_ENV,
-    webPreferences: Constants.DEFAULT_WEB_PREFERENCES
+    webPreferences: Constants.DEFAULT_WEB_PREFERENCES,
   })
 
   errorWindow.setMenu(null)

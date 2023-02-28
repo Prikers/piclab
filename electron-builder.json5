@@ -8,7 +8,7 @@
   artifactName: '${productName} ${version}_${arch}.${ext}',
   directories: {
     buildResources: 'buildAssets',
-    output: './release/${version}'
+    output: './release/${version}',
   },
   /* A list of files not to be included in the build. */
   files: [
@@ -17,7 +17,7 @@
     */
     'dist/**/*',
     '!docs/**/*',
-    '!release/**/*'
+    '!release/**/*',
   ],
   mac: {
     bundleVersion: '1.0',
@@ -28,9 +28,9 @@
     target: [
       {
         target: 'dmg',
-        arch: ['x64', 'arm64', 'universal']
-      }
-    ]
+        arch: ['x64', 'arm64', 'universal'],
+      },
+    ],
   },
   dmg: {
     contents: [
@@ -38,42 +38,42 @@
         x: 410,
         y: 150,
         type: 'link',
-        path: '/Applications'
+        path: '/Applications',
       },
       {
         x: 130,
         y: 150,
-        type: 'file'
-      }
+        type: 'file',
+      },
     ],
-    sign: false
+    sign: false,
   },
   win: {
     icon: 'buildAssets/icons/icon.ico',
     target: [
       {
         target: 'appx',
-        arch: 'x64'
+        arch: 'x64',
       },
       {
         target: 'zip',
-        arch: 'x64'
+        arch: 'x64',
       },
       {
         target: 'portable',
-        arch: 'x64'
+        arch: 'x64',
       },
       {
         target: 'nsis',
-        arch: 'x64'
-      }
-    ]
+        arch: 'x64',
+      },
+    ],
   },
   portable: {
-    artifactName: '${productName} ${version}_${arch} Portable.${ext}'
+    artifactName: '${productName} ${version}_${arch} Portable.${ext}',
   },
   nsis: {
-    oneClick: true
+    oneClick: true,
   },
   linux: {
     executableName: 'piclab',
@@ -82,16 +82,16 @@
     target: [
       {
         target: 'snap',
-        arch: 'x64'
+        arch: 'x64',
       },
       {
         target: 'deb',
-        arch: 'x64'
+        arch: 'x64',
       },
       {
         target: 'rpm',
-        arch: 'x64'
-      }
-    ]
-  }
+        arch: 'x64',
+      },
+    ],
+  },
 }

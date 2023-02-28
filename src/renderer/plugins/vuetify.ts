@@ -10,29 +10,29 @@ export default createVuetify({
   locale: {
     messages: { ko, en, zhHans, zhHant, de, es, ja, fr, ru, pt },
     locale: 'en',
-    fallback: 'en'
+    fallback: 'en',
   },
   icons: {
     defaultSet: 'mdi',
     aliases,
     sets: {
-      mdi
-    }
+      mdi,
+    },
   },
   theme: {
     themes: {
       light: {
         dark: false,
         colors: {
-          primary: colors.green.darken2
-        }
+          primary: colors.green.darken2,
+        },
       },
       dark: {
         dark: true,
         colors: {
-          primary: colors.green.darken4
-        }
-      }
-    }
-  }
+          primary: colors.green.darken4,
+        },
+      },
+    },
+  },
 })

@@ -8,26 +8,26 @@ export default createRouter({
       path: '/',
       component: MainScreen,
       meta: {
-        titleKey: 'title.main'
-      }
+        titleKey: 'title.main',
+      },
     },
     {
       path: '/second',
       component: SecondScreen,
       meta: {
-        titleKey: 'title.second'
-      }
+        titleKey: 'title.second',
+      },
     },
     {
       path: '/error',
       component: ErrorScreen,
       meta: {
-        titleKey: 'title.error'
-      }
+        titleKey: 'title.error',
+      },
     },
     {
       path: '/:pathMatch(.*)*',
-      redirect: '/'
-    }
-  ]
+      redirect: '/',
+    },
+  ],
 })
