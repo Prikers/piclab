@@ -1,0 +1,70 @@
+{
+  "name": "piclab",
+  "version": "0.0.1",
+  "description": "A desktop personnal photo manager supercharged with AI",
+  "author": "Melaine Euzenat",
+  "license": "MIT",
+  "main": "dist/main/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Prikers/piclab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Prikers/piclab/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:debug": "vite -d",
+    "dev:debug:force": "vite -d --force",
+    "build": "npm run build:pre && electron-builder -wml",
+    "build:pre": "npm run format:fix && vue-tsc --noEmit && vite build",
+    "build:dir": "npm run build:pre && electron-builder --dir",
+    "build:mac": "npm run build:pre && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac",
+    "build:linux": "npm run build:pre && electron-builder --linux",
+    "build:win": "npm run build:pre && electron-builder --windows",
+    "lint": "eslint --ext .js,.ts,.vue -f ./node_modules/eslint-friendly-formatter src",
+    "lint:fix": "eslint --ext .js,.ts,.vue -f ./node_modules/eslint-friendly-formatter --fix src",
+    "format": "prettier .",
+    "format:fix": "prettier . --write",
+    "docs:install": "npm i --no-save vitepress vitepress-sidebar",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "npm run format:fix && vitepress build docs",
+    "docs:serve": "npm run docs:build && vitepress serve docs"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "pinia": "^2.0.30",
+    "vue": "^3.2.47",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.6",
+    "vuetify": "^3.1.4"
+  },
+  "devDependencies": {
+    "@mdi/font": "^7.1.96",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "electron": "^23.0.0",
+    "electron-builder": "^23.3.3",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.9.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1",
+    "vite-plugin-electron": "^0.11.1",
+    "vite-plugin-electron-renderer": "^0.11.4",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-vuetify": "^1.0.2",
+    "vue-eslint-parser": "^9.1.0",
+    "vue-tsc": "^1.0.24"
+  }
+}

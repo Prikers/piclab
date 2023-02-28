@@ -1,0 +1,10 @@
+node_modules/
+buildAssets/
+dist/
+distDocs/
+release/
+docs/
+
+.idea/
+.vscode/
+.github/
