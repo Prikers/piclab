@@ -20,6 +20,9 @@ export const createMainWindow = async (mainWindow: BrowserWindow): Promise<Brows
     webPreferences: Constants.DEFAULT_WEB_PREFERENCES,
   })
 
+  // Initialize IPC Communication
+  IPCs.initialize(mainWindow)
+
   mainWindow.setMenu(null)
 
   mainWindow.on('close', (event: Event): void => {
@@ -45,9 +48,6 @@ export const createMainWindow = async (mainWindow: BrowserWindow): Promise<Brows
   } else {
     await mainWindow.loadFile(Constants.APP_INDEX_URL_PROD)
   }
-
-  // Initialize IPC Communication
-  IPCs.initialize(mainWindow)
 
   return mainWindow
 }
