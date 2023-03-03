@@ -10,10 +10,12 @@
     "error": "Unknown Error"
   },
   "menu": {
-    "change-theme": "Change Theme",
-    "change-language": "Change Language",
     "increase-count": "Count 1 increment",
     "documentation": "Documentation",
     "github": "Source Code"
+  },
+  "settings": {
+    "theme-title": "Theme",
+    "locale-title": "Language"
   }
 }

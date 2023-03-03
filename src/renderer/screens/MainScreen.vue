@@ -1,5 +1,4 @@
 <script setup lang="tsx">
-import { useI18n } from 'vue-i18n'
 import { useTheme } from 'vuetify'
 import { openExternal } from '@/renderer/utils'
 import { useCounterStore } from '@/renderer/stores/counter'
@@ -7,17 +6,13 @@ import { useSettingsStore } from '@/renderer/stores/settings'
 import { storeToRefs } from 'pinia'
 import { onMounted, ref } from 'vue'
 
-const { locale, availableLocales } = useI18n()
 const { counterIncrease } = useCounterStore()
 const { counter } = storeToRefs(useCounterStore())
 const settingsStore = useSettingsStore()
 const theme = useTheme()
-const languages = ref(['en'])
 const appVersion = ref('Unknown')
 
 onMounted((): void => {
-  languages.value = availableLocales
-
   // Get application version from package.json version string (Using IPC communication)
   window.mainApi.receive('msgReceivedVersion', (event: Event, version: string) => {
     appVersion.value = version
@@ -27,10 +22,6 @@ onMounted((): void => {
 
 const handleChangeTheme = (): void => {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
-}
-
-const handleChangeLanguage = (val: string): void => {
-  locale.value = val
 }
 
 const handleGitHub = async (): Promise<void> => {
@@ -90,17 +81,6 @@ const SetNewSettings = async (): Promise<void> => {
             <v-btn icon color="primary" @click="SetNewSettings">
               <v-icon icon="mdi-cog" />
             </v-btn>
-          </v-col>
-          <v-col cols="12">
-            <v-select
-              :model-value="locale"
-              density="compact"
-              :label="$t('menu.change-language')"
-              :items="languages"
-              @update:model-value="handleChangeLanguage"
-            >
-              {{ $t('menu.change-language') }}
-            </v-select>
           </v-col>
         </v-row>
       </v-col>

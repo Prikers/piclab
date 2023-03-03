@@ -1,6 +1,8 @@
 <script setup lang="tsx">
 import { useRoute, useRouter } from 'vue-router'
+import { useAnimationStore } from '@/renderer/stores/animation'
 
+const animationStore = useAnimationStore()
 const router = useRouter()
 const route = useRoute()
 const titleKey: string = (route?.meta?.titleKey || 'title.main') as string
@@ -12,7 +14,9 @@ const handleRoute = (path: string): void => {
 const isCurrentRoute = (path: string): boolean => {
   return path === route.path
 }
+
 </script>
+
 <template>
   <v-app-bar color="primary" density="compact">
     <v-app-bar-title>{{ $t(titleKey) }}</v-app-bar-title>
@@ -33,9 +37,14 @@ const isCurrentRoute = (path: string): boolean => {
       >
         {{ $t('title.second') }}
       </v-btn>
+      <v-btn
+        icon="mdi-cog"
+        @click="animationStore.showOrHideSettingsDrawer">
+      </v-btn>
     </template>
   </v-app-bar>
 </template>
+
 <style scoped>
 .v-btn {
   opacity: 0.4;

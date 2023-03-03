@@ -10,10 +10,12 @@
     "error": "Erreur est survenue"
   },
   "menu": {
-    "change-theme": "Change le thème",
-    "change-language": "Changer de langue",
     "increase-count": "Augmenter le nombre de 1",
     "documentation": "Document",
     "github": "Code source"
+  },
+  "settings": {
+    "theme-title": "Thème",
+    "locale-title": "Langue"
   }
 }
