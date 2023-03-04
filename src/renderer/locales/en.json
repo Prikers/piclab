@@ -1,7 +1,7 @@
 {
-  "desc": {
-    "welcome-title": "Hello Piclab! Everything is ready.",
-    "welcome-desc": "You can now write cross-platform web applications. See changes in real time and build to multiple platforms with one command. If you're not already familiar with it, you can get help from the documentation page below, or run some pre-written example code."
+  "main": {
+    "welcome-title": "Welcome to Piclab",
+    "welcome-desc": "Piclab is a powerful tool to manage your personal photos supercharged with AI. It enables to identify photo duplicates, find photos of someone based on face detection or create cool posters from your own photos. And all of this without sending your photos to a cloud!"
   },
   "title": {
     "main": "Dashboard",
@@ -12,6 +12,7 @@
   "settings": {
     "theme-title": "Theme",
     "locale-title": "Language",
-    "github":"Source Code"
+    "github":"Source Code",
+    "version": "Version"
   }
 }

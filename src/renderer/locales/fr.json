@@ -1,7 +1,7 @@
 {
-  "desc": {
-    "welcome-title": "Bonjour Piclab ! Tout est prêt.",
-    "welcome-desc": "Vous pouvez maintenant écrire des applications Web multiplateformes. Visualisez vos modifications en temps réel et créez sur plusieurs plates-formes avec une seule commande. Si vous ne le connaissez pas encore, vous pouvez obtenir de l'aide sur la page de documentation ci-dessous ou exécuter un exemple de code pré-écrit."
+  "main": {
+    "welcome-title": "Bienvenu sur Piclab",
+    "welcome-desc": "Piclab est un outil de gestion de photo boostée avec des algorithmes d'intelligence artificielle. Il permet de détecter des doublons de photos, retrouver les photos d'une personne avec la détection de visages ou encore créer des posters à partir de vos photos. Et tout cela sans jamais envoyer vos photos sur un cloud !"
   },
   "title": {
     "main": "Tableau de bord",
@@ -12,6 +12,7 @@
   "settings": {
     "theme-title": "Thème",
     "locale-title": "Langue",
-    "github": "Code source"
+    "github": "Code source",
+    "version": "Version"
   }
 }

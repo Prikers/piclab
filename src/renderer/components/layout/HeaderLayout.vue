@@ -5,7 +5,7 @@ const animationStore = useAnimationStore()
 
 <template>
   <v-app-bar color="primary" density="compact">
-    <v-app-bar-title>Piclab</v-app-bar-title>
+    <v-app-bar-title class="marker">Piclab</v-app-bar-title>
     <template #append>
       <v-btn
         icon="mdi-cog"
@@ -17,9 +17,6 @@ const animationStore = useAnimationStore()
 
 <style scoped>
 .v-btn {
-  opacity: 0.4;
-}
-.active {
-  opacity: 1 !important;
+  opacity: 0.5;
 }
 </style>

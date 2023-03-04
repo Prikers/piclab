@@ -24,13 +24,13 @@ export default createVuetify({
       light: {
         dark: false,
         colors: {
-          primary: colors.green.darken2,
+          primary: colors.teal.base,
         },
       },
       dark: {
         dark: true,
         colors: {
-          primary: colors.green.darken4,
+          primary: colors.teal.darken1,
         },
       },
     },

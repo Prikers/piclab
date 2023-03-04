@@ -9,6 +9,8 @@ import { DefaultLayout } from '@/renderer/components/layout'
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 html {
   overflow-y: auto !important;
   user-select: none;
@@ -18,6 +20,11 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.marker {
+  font-family: "Permanent Marker", cursive !important;
+}
+
 /* Do not force capitalization of button text */
 .v-btn {
   text-transform: unset !important;
