@@ -1,5 +1,5 @@
 import ErrorScreen from '@/renderer/screens/ErrorScreen.vue'
+import GalleryScreen from '@/renderer/screens/GalleryScreen.vue'
 import MainScreen from '@/renderer/screens/MainScreen.vue'
-import SecondScreen from '@/renderer/screens/SecondScreen.vue'
 
-export { ErrorScreen, MainScreen, SecondScreen }
+export { ErrorScreen, GalleryScreen, MainScreen }
