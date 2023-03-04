@@ -1,5 +1,5 @@
 <template>
   <v-container>
-    <h1>Gallery</h1>
+    <h1>Deduplication</h1>
   </v-container>
 </template>

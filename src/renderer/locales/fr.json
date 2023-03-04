@@ -6,6 +6,7 @@
   "title": {
     "main": "écran principal",
     "gallery": "Gallerie",
+    "deduplication": "Doublons",
     "error": "Erreur est survenue"
   },
   "menu": {

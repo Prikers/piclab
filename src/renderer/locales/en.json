@@ -6,6 +6,7 @@
   "title": {
     "main": "Main Screen",
     "gallery": "Gallery",
+    "deduplication": "Deduplication",
     "error": "Unknown Error"
   },
   "menu": {

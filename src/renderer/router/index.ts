@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router/dist/vue-router.esm-bundler'
-import { MainScreen, ErrorScreen, GalleryScreen } from '@/renderer/screens'
+import { MainScreen, DeduplicationScreen, ErrorScreen, GalleryScreen } from '@/renderer/screens'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -16,6 +16,13 @@ export default createRouter({
       component: GalleryScreen,
       meta: {
         titleKey: 'title.gallery',
+      },
+    },
+    {
+      path: '/deduplication',
+      component: DeduplicationScreen,
+      meta: {
+        titleKey: 'title.deduplication',
       },
     },
     {
