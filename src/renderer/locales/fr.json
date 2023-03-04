@@ -9,13 +9,9 @@
     "deduplication": "Doublons",
     "error": "Erreur inconnue"
   },
-  "menu": {
-    "increase-count": "Augmenter le nombre de 1",
-    "documentation": "Document",
-    "github": "Code source"
-  },
   "settings": {
     "theme-title": "Thème",
-    "locale-title": "Langue"
+    "locale-title": "Langue",
+    "github": "Code source"
   }
 }

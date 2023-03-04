@@ -9,13 +9,9 @@
     "deduplication": "Deduplication",
     "error": "Unknown Error"
   },
-  "menu": {
-    "increase-count": "Count 1 increment",
-    "documentation": "Documentation",
-    "github": "Source Code"
-  },
   "settings": {
     "theme-title": "Theme",
-    "locale-title": "Language"
+    "locale-title": "Language",
+    "github":"Source Code"
   }
 }
