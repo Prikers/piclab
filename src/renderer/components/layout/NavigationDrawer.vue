@@ -23,7 +23,7 @@ const isCurrentRoute = (path: string): boolean => {
     <v-list density="compact" nav>
       <v-list-item
         prepend-icon="mdi-view-dashboard"
-        title="Dashboard"
+        :title="$t('title.main')"
         value="dashboard"
         :class="{ active: isCurrentRoute('/') }"
         @click="handleRoute('/')"
@@ -31,7 +31,7 @@ const isCurrentRoute = (path: string): boolean => {
       </v-list-item>
       <v-list-item
         prepend-icon="mdi-image-multiple"
-        title="Gallery"
+        :title="$t('title.gallery')"
         value="gallery"
         :class="{ active: isCurrentRoute('/') }"
         @click="handleRoute('/gallery')"
@@ -39,7 +39,7 @@ const isCurrentRoute = (path: string): boolean => {
       </v-list-item>
       <v-list-item
         prepend-icon="mdi-book-remove-multiple"
-        title="Deduplication"
+        :title="$t('title.deduplication')"
         value="deduplication"
         :class="{ active: isCurrentRoute('/') }"
         @click="handleRoute('/deduplication')"

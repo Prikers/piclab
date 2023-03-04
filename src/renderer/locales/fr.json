@@ -4,10 +4,10 @@
     "welcome-desc": "Vous pouvez maintenant écrire des applications Web multiplateformes. Visualisez vos modifications en temps réel et créez sur plusieurs plates-formes avec une seule commande. Si vous ne le connaissez pas encore, vous pouvez obtenir de l'aide sur la page de documentation ci-dessous ou exécuter un exemple de code pré-écrit."
   },
   "title": {
-    "main": "écran principal",
+    "main": "Tableau de bord",
     "gallery": "Gallerie",
     "deduplication": "Doublons",
-    "error": "Erreur est survenue"
+    "error": "Erreur inconnue"
   },
   "menu": {
     "increase-count": "Augmenter le nombre de 1",

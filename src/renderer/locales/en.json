@@ -4,7 +4,7 @@
     "welcome-desc": "You can now write cross-platform web applications. See changes in real time and build to multiple platforms with one command. If you're not already familiar with it, you can get help from the documentation page below, or run some pre-written example code."
   },
   "title": {
-    "main": "Main Screen",
+    "main": "Dashboard",
     "gallery": "Gallery",
     "deduplication": "Deduplication",
     "error": "Unknown Error"
