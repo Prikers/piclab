@@ -6,21 +6,21 @@ const schema = {
     type: 'object',
     properties: {
       locale: {
-        type: 'string'
+        type: 'string',
       },
       theme: {
-        type: 'string'
-      }
-    }
-  }
+        type: 'string',
+      },
+    },
+  },
 } as any
 const store = new Store({ schema })
 
 // Initialize with default values for new users
 if (!store.get('settings')) {
   store.set('settings', {
-    'locale': 'fr',
-    'theme': 'dark',
+    locale: 'fr',
+    theme: 'dark',
   })
 }
 

@@ -12,7 +12,7 @@
   "settings": {
     "theme-title": "Theme",
     "locale-title": "Language",
-    "github":"Source Code",
+    "github": "Source Code",
     "version": "Version"
   }
 }

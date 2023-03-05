@@ -12,7 +12,7 @@ export const useSettingsStore = defineStore('settings', {
     getSettings: async (state) => {
       const settings = await window.mainApi.invoke('msgGetStoreValue', 'settings')
       return settings
-    }
+    },
   },
   actions: {
     async updateSettings(key: string, value: any) {
@@ -21,6 +21,6 @@ export const useSettingsStore = defineStore('settings', {
       console.log('From Store', this.locale, this.theme)
       // Send modification to main process to update electron store
       await window.mainApi.invoke('msgSetStoreValue', key, value)
-    }
+    },
   },
 })

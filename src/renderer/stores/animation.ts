@@ -8,6 +8,6 @@ export const useAnimationStore = defineStore('animation', {
   actions: {
     showOrHideSettingsDrawer() {
       this.settingsDrawer = !this.settingsDrawer
-    }
+    },
   },
 })

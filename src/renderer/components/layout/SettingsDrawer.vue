@@ -25,8 +25,8 @@ const handleGitHub = async (): Promise<void> => {
 
 onMounted((): void => {
   languages.value = availableLocales
-    // Get application version from package.json version string (Using IPC communication)
-    window.mainApi.receive('msgReceivedVersion', (event: Event, version: string) => {
+  // Get application version from package.json version string (Using IPC communication)
+  window.mainApi.receive('msgReceivedVersion', (event: Event, version: string) => {
     appVersion.value = version
   })
   window.mainApi.send('msgRequestGetVersion')
@@ -34,12 +34,7 @@ onMounted((): void => {
 </script>
 
 <template>
-  <v-navigation-drawer
-    v-model="settingsDrawer"
-    temporary
-    width="320"
-    location="right"
-  >
+  <v-navigation-drawer v-model="settingsDrawer" temporary width="320" location="right">
     <!-- Theme -->
     <v-row class="mx-2 mt-2 align-center">
       <v-col cols="6">
@@ -93,6 +88,5 @@ onMounted((): void => {
         </v-col>
       </v-row>
     </template>
-
   </v-navigation-drawer>
 </template>

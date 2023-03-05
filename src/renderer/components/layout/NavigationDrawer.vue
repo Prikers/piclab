@@ -10,16 +10,10 @@ const handleRoute = (path: string): void => {
 const isCurrentRoute = (path: string): boolean => {
   return path === route.path
 }
-
 </script>
 
 <template>
-  <v-navigation-drawer
-    location="left"
-    permanent
-    expand-on-hover
-    rail
-  >
+  <v-navigation-drawer location="left" permanent expand-on-hover rail>
     <v-list density="compact" nav>
       <v-list-item
         prepend-icon="mdi-view-dashboard"

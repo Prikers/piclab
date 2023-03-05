@@ -17,16 +17,16 @@
   font-size: 6rem !important;
   font-weight: 300;
   line-height: 6rem;
-  letter-spacing: -.015625em !important;
+  letter-spacing: -0.015625em !important;
   text-transform: none !important;
 }
 .gradient-text {
   background-color: #009688;
-  background-image: linear-gradient(45deg, #00695C, #80CBC4);
+  background-image: linear-gradient(45deg, #00695c, #80cbc4);
   background-size: 100%;
   background-repeat: repeat;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }

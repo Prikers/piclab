@@ -22,7 +22,7 @@ body {
 }
 
 .marker {
-  font-family: "Permanent Marker", cursive !important;
+  font-family: 'Permanent Marker', cursive !important;
 }
 
 /* Do not force capitalization of button text */
