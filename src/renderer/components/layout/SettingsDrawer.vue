@@ -4,17 +4,21 @@ import { storeToRefs } from 'pinia'
 import { onMounted, ref } from 'vue'
 import { useTheme } from 'vuetify'
 import { useAnimationStore } from '@/renderer/stores/animation'
+import { useSettingsStore } from '@/renderer/stores/settings'
 import { openExternal } from '@/renderer/utils'
 
 const { locale, availableLocales } = useI18n()
 
 const theme = useTheme()
 const { settingsDrawer } = storeToRefs(useAnimationStore())
+const settingsStore = useSettingsStore()
 const appVersion = ref('Unknown')
 const languages = ref(['en'])
 
 const handleChangeTheme = (): void => {
-  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+  const newTheme = theme.global.current.value.dark ? 'light' : 'dark'
+  theme.global.name.value = newTheme
+  settingsStore.updateSettings('theme', newTheme)
 }
 const handleChangeLanguage = (val: string): void => {
   locale.value = val
@@ -24,6 +28,8 @@ const handleGitHub = async (): Promise<void> => {
 }
 
 onMounted((): void => {
+  // Retrieve initial settings from electron store
+  settingsStore.setInitialSettings()
   languages.value = availableLocales
   // Get application version from package.json version string (Using IPC communication)
   window.mainApi.receive('msgReceivedVersion', (event: Event, version: string) => {

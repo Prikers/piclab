@@ -25,6 +25,7 @@
   background-image: linear-gradient(45deg, #00695c, #80cbc4);
   background-size: 100%;
   background-repeat: repeat;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;

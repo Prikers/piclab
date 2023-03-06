@@ -19,7 +19,7 @@ const isCurrentRoute = (path: string): boolean => {
         prepend-icon="mdi-view-dashboard"
         :title="$t('title.main')"
         value="dashboard"
-        :class="{ active: isCurrentRoute('/') }"
+        :active="isCurrentRoute('/')"
         @click="handleRoute('/')"
       >
       </v-list-item>
@@ -27,7 +27,7 @@ const isCurrentRoute = (path: string): boolean => {
         prepend-icon="mdi-image-multiple"
         :title="$t('title.gallery')"
         value="gallery"
-        :class="{ active: isCurrentRoute('/') }"
+        :active="isCurrentRoute('/gallery')"
         @click="handleRoute('/gallery')"
       >
       </v-list-item>
@@ -35,7 +35,7 @@ const isCurrentRoute = (path: string): boolean => {
         prepend-icon="mdi-book-remove-multiple"
         :title="$t('title.deduplication')"
         value="deduplication"
-        :class="{ active: isCurrentRoute('/') }"
+        :active="isCurrentRoute('/deduplication')"
         @click="handleRoute('/deduplication')"
       >
       </v-list-item>
