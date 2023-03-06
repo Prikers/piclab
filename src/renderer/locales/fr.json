@@ -1,7 +1,8 @@
 {
   "main": {
     "welcome-title": "Bienvenu sur Piclab",
-    "welcome-desc": "Piclab est un outil de gestion de photo boostée avec des algorithmes d'intelligence artificielle. Il permet de détecter des doublons de photos, retrouver les photos d'une personne avec la détection de visages ou encore créer des posters à partir de vos photos. Et tout cela sans jamais envoyer vos photos sur un cloud !"
+    "welcome-desc": "Piclab est un outil de gestion de photo boostée avec des algorithmes d'intelligence artificielle. Il permet de détecter des doublons de photos, retrouver les photos d'une personne avec la détection de visages ou encore créer des posters à partir de vos photos. Et tout cela sans jamais envoyer vos photos sur un cloud !",
+    "start-btn": "Démarrer la configuration"
   },
   "title": {
     "main": "Tableau de bord",

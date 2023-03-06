@@ -1,6 +1,10 @@
+<script setup lang="tsx">
+import { StartConfiguration } from '../components'
+</script>
+
 <template>
-  <v-container>
-    <v-row no-gutters align="center" class="text-center">
+  <v-container fluid class="fill-height align-start">
+    <v-row no-gutters justify="center" align="center" class="text-center">
       <v-col cols="12" md="5">
         <h1 class="marker gradient-text main-title">Piclab</h1>
       </v-col>
@@ -9,6 +13,11 @@
         <p>{{ $t('main.welcome-desc') }}</p>
       </v-col>
     </v-row>
+
+    <v-row justify="center" align="center">
+      <start-configuration />
+    </v-row>
+
   </v-container>
 </template>
 

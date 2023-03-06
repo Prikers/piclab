@@ -1,7 +1,8 @@
 {
   "main": {
     "welcome-title": "Welcome to Piclab",
-    "welcome-desc": "Piclab is a powerful tool to manage your personal photos supercharged with AI. It enables to identify photo duplicates, find photos of someone based on face detection or create cool posters from your own photos. And all of this without sending your photos to a cloud!"
+    "welcome-desc": "Piclab is a powerful tool to manage your personal photos supercharged with AI. It enables to identify photo duplicates, find photos of someone based on face detection or create cool posters from your own photos. And all of this without sending your photos to a cloud!",
+    "start-btn": "Start configuration"
   },
   "title": {
     "main": "Dashboard",
