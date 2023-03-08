@@ -10,10 +10,16 @@
     "deduplication": "Doublons",
     "error": "Erreur inconnue"
   },
+  "commons": {
+    "cancel": "Annuler"
+  },
   "settings": {
     "theme-title": "Thème",
     "locale-title": "Langue",
     "github": "Code source",
     "version": "Version"
+  },
+  "projectConfiguration": {
+    "description": "La première étape lors de la configuration d'un projet consiste simplement à choisir le dossier qui contient toutes les images à analyser. Ce dossier peut contenir beaucoup images, des dossiers, des sous-dossiers, etc."
   }
 }

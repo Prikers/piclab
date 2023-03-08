@@ -5,9 +5,13 @@ const mainAvailChannels: string[] = [
   'msgRequestGetVersion',
   'msgOpenExternalLink',
   'msgGetStoreValue',
+  'msgOpenDialogPickFolder',
   'msgSetStoreValue',
 ]
-const rendererAvailChannels: string[] = ['msgReceivedVersion']
+const rendererAvailChannels: string[] = [
+  'msgReceivedVersion',
+  'msgPickedFolder',
+]
 
 contextBridge.exposeInMainWorld('mainApi', {
   send: (channel: string, ...data: any[]): void => {

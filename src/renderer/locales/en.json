@@ -10,10 +10,16 @@
     "deduplication": "Deduplication",
     "error": "Unknown Error"
   },
+  "commons": {
+    "cancel": "Cancel"
+  },
   "settings": {
     "theme-title": "Theme",
     "locale-title": "Language",
     "github": "Source Code",
     "version": "Version"
+  },
+  "projectConfiguration": {
+    "description": "The first step towards project configuration consists in picking up the top-level folder which contains all images to analyze. This folder may contain many images, other folders, sub-folders, etc."
   }
 }

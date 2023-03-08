@@ -1,4 +1,4 @@
-import { BrowserWindow, ipcMain, shell } from 'electron'
+import { BrowserWindow, dialog, ipcMain, shell } from 'electron'
 import Constants from './utils/Constants'
 import store from './utils/store'
 
@@ -24,6 +24,11 @@ export default class IPCs {
 
     ipcMain.handle('msgSetStoreValue', (event, key: string, value: any) => {
       store.set(`settings.${key}`, value)
+    })
+
+    ipcMain.handle('msgOpenDialogPickFolder', async (event) => {
+      const result = await dialog.showOpenDialog({ properties: ['openDirectory'] })
+      window.webContents.send('msgPickedFolder', result)
     })
   }
 }
