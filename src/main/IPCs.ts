@@ -28,6 +28,10 @@ export default class IPCs {
 
     ipcMain.handle('msgOpenDialogPickFolder', async (event) => {
       const result = await dialog.showOpenDialog({ properties: ['openDirectory'] })
+      if (!result.canceled) {
+        store.set('project.created', true)
+        store.set('project.folder', result.filePaths[0])
+      }
       window.webContents.send('msgPickedFolder', result)
     })
   }

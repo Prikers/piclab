@@ -13,6 +13,17 @@ const schema = {
       },
     },
   },
+  project: {
+    type: 'object',
+    properties: {
+      created: {
+        type: 'boolean',
+      },
+      folder: {
+        type: 'string',
+      },
+    },
+  },
 } as any
 const store = new Store({ schema })
 
@@ -21,6 +32,9 @@ if (!store.get('settings')) {
   store.set('settings', {
     locale: 'fr',
     theme: 'dark',
+  })
+  store.set('project', {
+    created: false,
   })
 }
 

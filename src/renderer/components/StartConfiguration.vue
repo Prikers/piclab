@@ -2,12 +2,14 @@
 
 import type { OpenDialogReturnValue } from 'electron'
 import { storeToRefs } from 'pinia'
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { useAnimationStore } from '@/renderer/stores/animation'
+import { useProjectStore } from '@/renderer/stores/project'
 
 const animationStore = useAnimationStore()
+const projectStore = useProjectStore()
 const { dialogStartConfiguration } = storeToRefs(animationStore)
-const folder = ref('')
+const { folder } = storeToRefs(projectStore)
 
 const handleDialogPickFolder = async () => {
   await window.mainApi.invoke('msgOpenDialogPickFolder')
