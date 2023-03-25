@@ -1,7 +1,7 @@
 {
   "main": {
     "welcome-title": "Bienvenu sur Piclab",
-    "welcome-desc": "Piclab est un outil de gestion de photo boostée avec des algorithmes d'intelligence artificielle. Il permet de détecter des doublons de photos, retrouver les photos d'une personne avec la détection de visages ou encore créer des posters à partir de vos photos. Et tout cela sans jamais envoyer vos photos sur un cloud !",
+    "welcome-desc": "Piclab est un outil de gestion de photo boosté avec des algorithmes d'intelligence artificielle. Il permet de détecter des doublons de photos, retrouver les photos d'une personne avec la détection de visages ou encore créer des posters à partir de vos photos. Et tout cela sans jamais envoyer vos photos sur un cloud !",
     "start-btn": "Démarrer la configuration"
   },
   "title": {
@@ -11,7 +11,9 @@
     "error": "Erreur inconnue"
   },
   "commons": {
-    "cancel": "Annuler"
+    "cancel": "Annuler",
+    "validate": "Valider",
+    "next": "Suivant"
   },
   "settings": {
     "theme-title": "Thème",
@@ -20,6 +22,15 @@
     "version": "Version"
   },
   "projectConfiguration": {
-    "description": "La première étape lors de la configuration d'un projet consiste simplement à choisir le dossier qui contient toutes les images à analyser. Ce dossier peut contenir beaucoup images, des dossiers, des sous-dossiers, etc."
+    "step-1": "La première étape lors de la configuration d'un projet consiste simplement à choisir le dossier qui contient toutes les images à analyser. Ce dossier peut contenir beaucoup d'images, des dossiers, des sous-dossiers, etc.",
+    "step-2": "La deuxième étape consiste à choisir les analyses qui seront réalisées sur les photos. Sélectionner au moins une option.",
+    "algorithms": {
+      "duplicate": "Détection des doublons",
+      "qualityWarning": "Détection des photos de mauvaise qualité",
+      "smilesDetection": "Détection des sourires",
+      "redEyesDetection": "Détection des yeux rouges",
+      "faceDetection": "Détection des visages",
+      "faceRecognition": "Reconnaissance des visages"
+    }
   }
 }

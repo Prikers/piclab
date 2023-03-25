@@ -11,7 +11,9 @@
     "error": "Unknown Error"
   },
   "commons": {
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "validate": "Validate",
+    "next": "Next"
   },
   "settings": {
     "theme-title": "Theme",
@@ -20,6 +22,15 @@
     "version": "Version"
   },
   "projectConfiguration": {
-    "description": "The first step towards project configuration consists in picking up the top-level folder which contains all images to analyze. This folder may contain many images, other folders, sub-folders, etc."
+    "step-1": "The first step for project configuration consists in picking up the top-level folder which contains all images to analyze. This folder may contain many images, other folders, sub-folders, etc.",
+    "step-2": "The second step consists in selecting the analyses that you want to perform on the images. You can select one or more analyses.",
+    "algorithms": {
+      "duplicate": "Photo duplicates detection",
+      "qualityWarning": "Low quality photos detection",
+      "smilesDetection": "Smile detections in photos",
+      "redEyesDetection": "Red eyes detection in photos",
+      "faceDetection": "Face detection in photos",
+      "faceRecognition": "Face recognition in photos"
+    }
   }
 }

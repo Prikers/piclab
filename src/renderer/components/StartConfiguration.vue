@@ -2,23 +2,29 @@
 
 import type { OpenDialogReturnValue } from 'electron'
 import { storeToRefs } from 'pinia'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useAnimationStore } from '@/renderer/stores/animation'
 import { useProjectStore } from '@/renderer/stores/project'
 
 const animationStore = useAnimationStore()
 const projectStore = useProjectStore()
 const { dialogStartConfiguration } = storeToRefs(animationStore)
-const { folder } = storeToRefs(projectStore)
+const { folder, selectedAlgorithms } = storeToRefs(projectStore)
+const step = ref(1)
 
 const handleDialogPickFolder = async () => {
   await window.mainApi.invoke('msgOpenDialogPickFolder')
+}
+
+const handleProjectValidation = async () => {
+  animationStore.showOrHideDialog('startConfiguration', false)
 }
 
 onMounted((): void => {
   window.mainApi.receive('msgPickedFolder', (event: Event, result: OpenDialogReturnValue) => {
     if (!result.canceled) {
       folder.value = result.filePaths[0]
+      step.value = 2
     }
   })
 })
@@ -30,14 +36,35 @@ onMounted((): void => {
   <v-dialog v-model="dialogStartConfiguration" width="auto" persistent>
     <v-card>
       <v-card-text>
-        {{ $t('projectConfiguration.description') }}
-        <div class="text-center my-6">
-          <v-btn color="primary" @click="handleDialogPickFolder">Pick A Folder</v-btn>
-        </div>
-        {{ folder }}
+        <v-timeline align="start" side="end">
+          <!-- Pick the project folder -->
+          <v-timeline-item icon="mdi-numeric-1" dot-color="primary">
+            {{ $t('projectConfiguration.step-1') }}
+            <div class="text-center my-6">
+              <v-btn color="primary" @click="handleDialogPickFolder">Pick A Folder</v-btn>
+              <div class="mt-4">{{ folder }}</div>
+            </div>
+          </v-timeline-item>
+          <v-timeline-item icon="mdi-numeric-2" dot-color="primary" v-if="step > 1">
+            {{ $t('projectConfiguration.step-2') }}
+            <v-checkbox
+              v-for="(val, algorithm, index) in projectStore.algorithms" :key="index"
+              density="compact"
+              multiple
+              hide-details
+              v-model="selectedAlgorithms"
+              :label="$t('projectConfiguration.algorithms.' + algorithm )"
+              :value="algorithm"
+            >
+            </v-checkbox>
+          </v-timeline-item>
+        </v-timeline>
+
       </v-card-text>
       <v-card-actions>
         <v-btn color="secondary" @click="animationStore.showOrHideDialog('startConfiguration', false)">{{ $t('commons.cancel') }}</v-btn>
+        <v-spacer></v-spacer>
+        <v-btn color="primary" variant="outlined" v-if="step > 1" @click="handleProjectValidation">{{ $t('commons.validate') }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
