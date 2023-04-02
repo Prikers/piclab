@@ -3,22 +3,22 @@ import { defineStore } from 'pinia'
 // Get project information from electron store
 const project = await window.mainApi.invoke('msgGetStoreValue', 'project')
 const algorithms = {
-  'duplicate': {
+  duplicate: {
     default: true,
   },
-  'qualityWarning': {
+  qualityWarning: {
     default: true,
   },
-  'smilesDetection': {
+  smilesDetection: {
     default: true,
   },
-  'redEyesDetection':{
+  redEyesDetection: {
     default: true,
   },
-  'faceDetection': {
+  faceDetection: {
     default: false,
   },
-  'faceRecognition': {
+  faceRecognition: {
     default: false,
   },
 }
@@ -28,7 +28,7 @@ export const useProjectStore = defineStore('project', {
   state: () => ({
     created: project.created as boolean,
     folder: project.folder as string,
-    algorithms: project.algorithms as typeof algorithms || algorithms,
+    algorithms: (project.algorithms as typeof algorithms) || algorithms,
     selectedAlgorithms: defaultAlgorithms as string[],
   }),
   actions: {

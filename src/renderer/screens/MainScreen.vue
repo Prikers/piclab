@@ -17,7 +17,6 @@ import { StartConfiguration } from '../components'
     <v-row justify="center" align="center">
       <start-configuration />
     </v-row>
-
   </v-container>
 </template>
 
