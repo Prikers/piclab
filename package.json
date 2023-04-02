@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "electron-store": "^8.1.0",
+    "glob": "^9.3.4",
     "pinia": "^2.0.30",
     "vue": "^3.2.47",
     "vue-i18n": "^9.2.2",
@@ -49,7 +50,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "electron": "^23.0.0",
-    "electron-builder": "^23.3.3",
+    "electron-builder": "^24.1.2",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard": "^17.0.0",
