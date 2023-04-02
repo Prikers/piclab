@@ -22,10 +22,12 @@ export default class IPCs {
       return store.get(key)
     })
 
+    // Set info to default store
     ipcMain.handle('msgSetStoreValue', (event, key: string, value: any) => {
       store.set(`settings.${key}`, value)
     })
 
+    // Create project
     ipcMain.handle('msgOpenDialogPickFolder', async (event) => {
       const result = await dialog.showOpenDialog({ properties: ['openDirectory'] })
       if (!result.canceled) {
@@ -33,6 +35,12 @@ export default class IPCs {
         store.set('project.folder', result.filePaths[0])
       }
       window.webContents.send('msgPickedFolder', result)
+    })
+
+    // Start project
+    ipcMain.handle('msgCreateProject', async (event, projectName: string, algorithmString: string) => {
+      let algorithms: string[] = JSON.parse(algorithmString)
+      console.log('msgCreateProject', projectName, algorithms)
     })
   }
 }

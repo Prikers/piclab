@@ -18,6 +18,7 @@ const handleDialogPickFolder = async () => {
 
 const handleProjectValidation = async () => {
   animationStore.showOrHideDialog('startConfiguration', false)
+  await window.mainApi.invoke('msgCreateProject', folder.value, JSON.stringify(selectedAlgorithms.value))
 }
 
 onMounted((): void => {
@@ -45,14 +46,14 @@ onMounted((): void => {
               <div class="mt-4">{{ folder }}</div>
             </div>
           </v-timeline-item>
-          <v-timeline-item icon="mdi-numeric-2" dot-color="primary" v-if="step > 1">
+          <v-timeline-item v-if="step > 1" icon="mdi-numeric-2" dot-color="primary">
             {{ $t('projectConfiguration.step-2') }}
             <v-checkbox
               v-for="(val, algorithm, index) in projectStore.algorithms" :key="index"
+              v-model="selectedAlgorithms"
               density="compact"
               multiple
               hide-details
-              v-model="selectedAlgorithms"
               :label="$t('projectConfiguration.algorithms.' + algorithm )"
               :value="algorithm"
             >
@@ -64,7 +65,7 @@ onMounted((): void => {
       <v-card-actions>
         <v-btn color="secondary" @click="animationStore.showOrHideDialog('startConfiguration', false)">{{ $t('commons.cancel') }}</v-btn>
         <v-spacer></v-spacer>
-        <v-btn color="primary" variant="outlined" v-if="step > 1" @click="handleProjectValidation">{{ $t('commons.validate') }}</v-btn>
+        <v-btn v-if="step > 1" color="primary" variant="outlined" @click="handleProjectValidation">{{ $t('commons.validate') }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
