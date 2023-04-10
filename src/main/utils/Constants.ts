@@ -20,4 +20,6 @@ export default class Constants {
 
   static APP_INDEX_URL_DEV = 'http://localhost:5173/index.html'
   static APP_INDEX_URL_PROD = join(__dirname, '../index.html')
+
+  static IMAGE_TYPES = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'bmp', 'tiff']
 }

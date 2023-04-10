@@ -1,5 +1,8 @@
 import { BrowserWindow, dialog, ipcMain, shell } from 'electron'
+import { glob } from 'glob'
+
 import Constants from './utils/Constants'
+import { Photo } from './utils/interfaces'
 import store from './utils/store'
 
 /*
@@ -38,9 +41,28 @@ export default class IPCs {
     })
 
     // Start project
-    ipcMain.handle('msgCreateProject', async (event, projectName: string, algorithmString: string) => {
-      let algorithms: string[] = JSON.parse(algorithmString)
-      console.log('msgCreateProject', projectName, algorithms)
+    ipcMain.handle('msgCreateProject', async (event, folder: string, algoString: string) => {
+      // Algorithms
+      let algorithms: string[] = JSON.parse(algoString)
+      store.set('project.algorithms', algorithms)
+      // Glob all photos and save to store
+      const photosPaths = await glob('**/*.{' + Constants.IMAGE_TYPES.join(',') + '}', {
+        stat: true,
+        withFileTypes: true,
+        cwd: folder,
+      })
+      const photos: Photo[] = photosPaths.map((photo) => {
+        return {
+          name: photo.name,
+          fullname: photo.fullpath(),
+          parent: photo.parent?.name,
+          size: photo.size,
+          mtime: photo.mtime,
+          mode: photo.mode,
+        }
+      })
+      store.set('project.data', photos)
     })
+
   }
 }
